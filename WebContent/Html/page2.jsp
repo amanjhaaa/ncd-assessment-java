@@ -1,4 +1,5 @@
 <!doctype html>
+<%@page import="com.aman.NcdServlet1"%>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -9,7 +10,17 @@
  </head>
   <body>
    <div class="container-fluid">
+<h2>
 
+
+<% 
+out.println("<pre>");
+out.println("patient id :"+NcdServlet1.id);
+
+out.println("</pre>");
+%>
+
+</h2>
   <form method = "post" action = "/NcdAssessment/NcdServlet2" >
   <center>
   <h1 style="color:red" >NCD Risk Assessment Checklist</h1>
@@ -152,7 +163,7 @@
         <td>
           
           <div>
-            <label>input alcoholic</label>
+            <label>input alcoholic</label><br>
             <input type="number" id="alcohol" name="alcohol" />
           </div>
           
@@ -214,7 +225,7 @@
            <!--<label>GENDER</label>
             Male<input type="radio" name="male"> FeMale<input type="radio" name="female">
             <br>-->
-            <label>input measurement</label>
+            <label>input measurement</label><br>
             <input type="number" id="measurement" name="measurement" autocomplete="off" />
             
           </div>
@@ -252,7 +263,7 @@
           
          
           <div>
-            <label>input physical</label>
+            <label>input physical</label><br>
             <input type="number" id="physical" name="physical" autocomplete="off" />
             
           </div>
@@ -292,7 +303,7 @@
         </td>
         <td>
           <div>
-            <label>input Family history</label>
+            <label>input Family history</label><br>
             <input type="number" id="history" name="history" autocomplete="off" />
             
           </div>

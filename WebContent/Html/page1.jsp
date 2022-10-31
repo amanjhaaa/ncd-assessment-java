@@ -5,8 +5,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+
 <h1>PATIENT REGISTRATION PAGE</h1>
 <form method = "post" action = "/NcdAssessment/NcdServlet1">
+
+
 <label> Firstname </label> <br>        
 <input type="text" name="firstname" size="15"/> <br> <br>  
 <label> Middlename: </label><br>   

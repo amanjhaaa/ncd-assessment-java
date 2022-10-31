@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 public class NcdServlet1 extends HttpServlet {
 //	public static String birthday;
 	public static String birthday;
+	public static String id;
 /**
 	 * 
 	 */
@@ -46,6 +47,16 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
 		String result=" ";
 		  String count=" ";
 		
+		  
+		    long  min = 99999999999999L;
+		    long  max = 10000000000000L;
+		    
+		    
+		    long random_int = (long)(Math.random() * (max - min + 1) + min);
+		     id = Long.toString(random_int);
+		
+		    out.println("partient: "+id); 
+		    
 		request.getSession().setAttribute("firstname", firstname);
 		request.getSession().setAttribute("middlename", middlename);
 		request.getSession().setAttribute("lastname", lastname);
@@ -78,19 +89,20 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
 	    		Class.forName("com.mysql.jdbc.Driver");
 //	    		con =DriverManager.getConnection("jdbc:mqsql://localhost:3306/pat_info","sqluser","password");
 	    		con =DriverManager.getConnection("jdbc:mysql://localhost:3306/db?useSSL=false", "aman1", "1234");
-	    		PreparedStatement ps=con.prepareStatement("INSERT INTO pat_info" + "(firstname,middlename,lastname,gender,birthday,pincode,result,count) values(?,?,?,?,?,?,?,?)");
+	    		PreparedStatement ps=con.prepareStatement("INSERT INTO pat_info" + "(id,firstname,middlename,lastname,gender,birthday,pincode,result,count) values(?,?,?,?,?,?,?,?,?)");
 //	    		String INSERT_USERS_SQL = "INSERT INTO patientinfo" +
 //	    	            "  (id, first_name, last_name, gender, aadhaar_uid, phone_no, dob, pincode) VALUES " +
 //	    	            " (?, ?, ?, ?, ?,?,?,?);";
 //	    		ps.setInt(1, 1);cr
-	    		ps.setString(1,firstname);
-	    		ps.setString(2,middlename);
-	    		ps.setString(3,lastname);
-	    		ps.setString(4,gender);
-	    		ps.setString(5,birthday);
-	    		ps.setString(6,pincode);
-	    		ps.setString(7,count);
-	    		ps.setString(8,result);
+	    		ps.setString(1,id);
+	    		ps.setString(2,firstname);
+	    		ps.setString(3,middlename);
+	    		ps.setString(4,lastname);
+	    		ps.setString(5,gender);
+	    		ps.setString(6,birthday);
+	    		ps.setString(7,pincode);
+	    		ps.setString(8,count);
+	    		ps.setString(9,result);
 	    		
 	      
 	      
@@ -125,7 +137,7 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
 	      
 	    	
 //		response.sendRedirect("jsp/printout.jsp");
-		response.sendRedirect("Html/page2.html");
+		response.sendRedirect("Html/page2.jsp");
 		
 		
 		

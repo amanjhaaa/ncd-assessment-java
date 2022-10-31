@@ -62,8 +62,8 @@ public class NcdServlet2 extends HttpServlet {
 	    		
 	    		String s=String.valueOf(total);
 
-	    		ps.setString(1,s);
-	    		ps.setString(2,result);
+	    		ps.setString(1,result);
+	    		ps.setString(2,s);
 	    		ps.setString(3,NcdServlet1.birthday);
 
 	      
